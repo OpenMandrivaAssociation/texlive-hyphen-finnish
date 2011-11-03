@@ -1,3 +1,9 @@
+# revision 23092
+# category TLCore
+# catalog-ctan /language/hyphenation/fihyph
+# catalog-date 2009-09-27 10:36:15 +0200
+# catalog-license pd
+# catalog-version undef
 Name:		texlive-hyphen-finnish
 Version:	20090927
 Release:	1
@@ -46,6 +52,7 @@ Hyphenation patterns for Finnish in T1/EC and UTF-8 encodings.
 %_texmf_language_dat_d/hyphen-finnish
 %_texmf_language_def_d/hyphen-finnish
 %_texmf_language_lua_d/hyphen-finnish
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,6 +61,8 @@ Hyphenation patterns for Finnish in T1/EC and UTF-8 encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish <<EOF
 %% from hyphen-finnish:
