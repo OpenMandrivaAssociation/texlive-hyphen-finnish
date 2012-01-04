@@ -44,12 +44,12 @@ Hyphenation patterns for Finnish in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish <<EOF
-%% from hyphen-finnish:
+\%\% from hyphen-finnish:
 finnish loadhyph-fi.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-finnish <<EOF
-%% from hyphen-finnish:
+\%\% from hyphen-finnish:
 \addlanguage{finnish}{loadhyph-fi.tex}{}{2}{2}
 EOF
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
