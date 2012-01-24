@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-finnish
 Version:	20090927
-Release:	2
+Release:	1
 Summary:	Finnish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/hyphenation/fihyph
@@ -44,14 +44,16 @@ Hyphenation patterns for Finnish in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish <<EOF
-\%\% from hyphen-finnish:
+\%% from hyphen-finnish:
 finnish loadhyph-fi.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-finnish <<EOF
-\%\% from hyphen-finnish:
+\%% from hyphen-finnish:
 \addlanguage{finnish}{loadhyph-fi.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-finnish
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-finnish <<EOF
 -- from hyphen-finnish:
