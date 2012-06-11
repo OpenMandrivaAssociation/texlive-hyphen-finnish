@@ -1,4 +1,4 @@
-# revision 23092
+# revision 25990
 # category TLCore
 # catalog-ctan /language/hyphenation/fihyph
 # catalog-date 2009-09-27 10:36:15 +0200
@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-finnish
 Version:	20090927
-Release:	3
+Release:	4
 Summary:	Finnish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/hyphenation/fihyph
