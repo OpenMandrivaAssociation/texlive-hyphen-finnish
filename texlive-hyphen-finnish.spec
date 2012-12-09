@@ -66,3 +66,26 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-finnish <<EOF
 		hyphenation = '',
 	},
 EOF
+
+
+%changelog
+* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20090927-4
++ Revision: 804731
+- Update to latest release.
+
+* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20090927-3
++ Revision: 767542
+- Add workaround to rpm bug that broke hyphenation files
+- Add workaround to rpm bug that broke hyphenation files
+
+* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20090927-2
++ Revision: 759912
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20090927-1
++ Revision: 718654
+- texlive-hyphen-finnish
+- texlive-hyphen-finnish
+- texlive-hyphen-finnish
+- texlive-hyphen-finnish
+
