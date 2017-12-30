@@ -5,8 +5,8 @@
 # catalog-license pd
 # catalog-version undef
 Name:		texlive-hyphen-finnish
-Version:	20090927
-Release:	12
+Version:	20170414
+Release:	1
 Summary:	Finnish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/hyphenation/fihyph
