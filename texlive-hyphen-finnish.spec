@@ -5,7 +5,7 @@
 # catalog-license pd
 # catalog-version undef
 Name:		texlive-hyphen-finnish
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	Finnish hyphenation patterns
 Group:		Publishing
