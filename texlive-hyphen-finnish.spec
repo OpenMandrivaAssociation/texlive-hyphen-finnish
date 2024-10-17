@@ -3,7 +3,7 @@ Version:	71880
 Release:	1
 Summary:	Finnish hyphenation patterns
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/hyphenation/fihyph
+URL:		https://www.ctan.org/tex-archive/language/hyphenation/fihyph
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-finnish.r%{version}.tar.xz
 BuildArch:	noarch
