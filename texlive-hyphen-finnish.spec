@@ -1,67 +1,23 @@
-Name:		texlive-hyphen-finnish
-Version:	71880
+%global tl_name hyphen-finnish
+%global tl_revision 78069
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
-Summary:	Finnish hyphenation patterns
+Summary:	Finnish hyphenation patterns.
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/hyphenation/fihyph
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-finnish.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-finnish.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-hyphen-base
-Requires:	texlive-hyph-utf8
+BuildSystem:	texlive
+Requires:	texlive(hyph-utf8)
+Requires:	texlive(hyphen-base)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Hyphenation patterns for Finnish in T1/EC and UTF-8 encodings.
+Hyphenation patterns for Finnish in T1 and UTF-8 encodings. The older
+set, labelled just 'fi', tries to implement etymological rules, while
+the newer ones (fi-x-school) implements the simpler rules taught at
+Finnish school.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
-%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
-%_texmf_language_dat_d/hyphen-finnish
-%_texmf_language_def_d/hyphen-finnish
-%_texmf_language_lua_d/hyphen-finnish
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex %{buildroot}%{_texmfdistdir}
-
-mkdir -p %{buildroot}%{_texmf_language_dat_d}
-cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish <<EOF
-\%% from hyphen-finnish:
-finnish loadhyph-fi.tex
-EOF
-perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-finnish
-mkdir -p %{buildroot}%{_texmf_language_def_d}
-cat > %{buildroot}%{_texmf_language_def_d}/hyphen-finnish <<EOF
-\%% from hyphen-finnish:
-\addlanguage{finnish}{loadhyph-fi.tex}{}{2}{2}
-EOF
-perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-finnish
-mkdir -p %{buildroot}%{_texmf_language_lua_d}
-cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-finnish <<EOF
--- from hyphen-finnish:
-	['finnish'] = {
-		loader = 'loadhyph-fi.tex',
-		lefthyphenmin = 2,
-		righthyphenmin = 2,
-		synonyms = {  },
-		patterns = 'hyph-fi.pat.txt',
-		hyphenation = '',
-	},
-EOF
